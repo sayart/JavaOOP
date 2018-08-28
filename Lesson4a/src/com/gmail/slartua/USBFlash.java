@@ -1,6 +1,6 @@
 package com.gmail.slartua;
 
-public class USBFlash implements USBDevice, Comparable {
+public class USBFlash implements USBDevice, Comparable<Object> {
 	private int size;
 	private String vendor;
 	private String model;
@@ -58,11 +58,11 @@ public class USBFlash implements USBDevice, Comparable {
 
 	@Override
 	public int compareTo(Object o) {
-		USBFLash anotherUsbFlash = (USBFlash) o;
-		if (this.size > anotherUSBFlash.size) {
+		USBFlash anotherUsbFlash = (USBFlash) o;
+		if (this.size > anotherUsbFlash.size) {
 			return 1;
 		}
-		if(this.size <anotherUSBFlash.size) {
+		if(this.size <anotherUsbFlash.size) {
 			return -1;
 		}
 		return 0;
